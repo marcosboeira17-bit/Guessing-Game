@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Guessing Game - Learn English</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>🎮 Guessing Game</h1>
+        <p>Learn English while having fun!</p>
+
+        <a href="manual.html" class="manual-link">
+            📖 How to Play
+        </a>
+    </header>
+
+    <main class="game-container">
+
+        <section class="game-info">
+
+            <div>
+                <span>Question</span>
+                <h2 id="question">1 / 30</h2>
+            </div>
+
+            <div>
+                <span>Score</span>
+                <h2 id="score">0 pts</h2>
+            </div>
+
+        </section>
+
+        <div class="progress-bar">
+            <div id="progress"></div>
+        </div>
+
+        <section class="clue-box">
+
+            <span class="category" id="category"></span>
+
+            <h2>💡 What am I?</h2>
+
+            <div id="clues"></div>
+
+        </section>
+
+        <section class="answer-area">
+
+            <label for="answer">Your answer:</label>
+
+            <input
+                type="text"
+                id="answer"
+                placeholder="English or Portuguese"
+                autocomplete="off"
+            >
+
+            <button id="checkBtn" class="primary-btn">
+                Check Answer
+            </button>
+
+            <p id="message" aria-live="polite"></p>
+
+        </section>
+
+        <section class="actions">
+
+            <button id="hintBtn">
+                💡 More Hints
+            </button>
+
+            <button id="nextBtn" disabled>
+                Next Word →
+            </button>
+
+        </section>
+
+        <button id="restartBtn" class="restart-btn">
+            ↻ Restart Game
+        </button>
+
+    </main>
+
+    <footer>
+        <p>Guessing Game © 2026</p>
+        <p>Learn English through technology.</p>
+    </footer>
+
+    <script src="js/words.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+</html>

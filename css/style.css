@@ -1,0 +1,446 @@
+
+/* ==============================
+   GLOBAL SETTINGS
+============================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+    background: #0f172a;
+    color: #f8fafc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 16px;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+h1, h2, p, li {
+    overflow-wrap: anywhere;
+}
+
+/* ==============================
+   HEADER
+============================== */
+
+header {
+    width: 100%;
+    max-width: 700px;
+    text-align: center;
+    padding: 25px 0 20px;
+}
+
+header h1 {
+    font-size: clamp(24px, 6vw, 36px);
+    color: #60a5fa;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: clamp(14px, 3vw, 16px);
+    color: #94a3b8;
+    margin-bottom: 15px;
+}
+
+.manual-link {
+    display: inline-block;
+    max-width: 100%;
+    text-decoration: none;
+    color: #60a5fa;
+    border: 1px solid #60a5fa;
+    padding: 12px 20px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.manual-link:hover {
+    background: #60a5fa;
+    color: #0f172a;
+}
+
+/* ==============================
+   GAME CONTAINER
+============================== */
+
+.game-container {
+    width: 100%;
+    max-width: 550px;
+    min-width: 0;
+    background: #1e293b;
+    padding: clamp(14px, 4vw, 28px);
+    border-radius: 20px;
+    border: 1px solid #334155;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* ==============================
+   SCORE AND QUESTION
+============================== */
+
+.game-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.game-info > div {
+    min-width: 0;
+}
+
+.game-info > div:last-child {
+    text-align: right;
+}
+
+.game-info span {
+    font-size: 13px;
+    color: #94a3b8;
+}
+
+.game-info h2 {
+    font-size: clamp(18px, 5vw, 24px);
+    margin-top: 5px;
+}
+
+#score {
+    color: #4ade80;
+}
+
+/* ==============================
+   PROGRESS BAR
+============================== */
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #334155;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+#progress {
+    width: 0%;
+    height: 100%;
+    background: #60a5fa;
+    transition: width 0.4s;
+}
+
+/* ==============================
+   CLUES
+============================== */
+
+.clue-box {
+    width: 100%;
+    min-width: 0;
+    background: #0f172a;
+    padding: clamp(12px, 4vw, 25px);
+    text-align: center;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.category {
+    display: inline-block;
+    max-width: 100%;
+    background: #1e3a5f;
+    color: #93c5fd;
+    padding: 7px 15px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 12px;
+    overflow-wrap: anywhere;
+}
+
+.clue-box h2 {
+    font-size: clamp(20px, 5vw, 26px);
+    margin-bottom: 15px;
+}
+
+#clues {
+    width: 100%;
+}
+
+#clues p {
+    width: 100%;
+    color: #cbd5e1;
+    font-size: clamp(14px, 3.5vw, 16px);
+    line-height: 1.6;
+    padding: 12px;
+    margin-bottom: 8px;
+    background: #1e293b;
+    border-radius: 8px;
+}
+
+/* ==============================
+   ANSWER AREA
+============================== */
+
+.answer-area {
+    width: 100%;
+    min-width: 0;
+}
+
+.answer-area label {
+    display: block;
+    margin-bottom: 10px;
+    color: #cbd5e1;
+}
+
+input {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    min-height: 48px;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #475569;
+    background: #0f172a;
+    color: white;
+    font-size: 16px;
+    outline: none;
+    margin-bottom: 12px;
+}
+
+input:focus {
+    border-color: #60a5fa;
+}
+
+/* ==============================
+   BUTTONS
+============================== */
+
+button {
+    min-width: 0;
+    min-height: 46px;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    touch-action: manipulation;
+}
+
+button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.primary-btn {
+    width: 100%;
+    background: #2563eb;
+    color: white;
+}
+
+.actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.actions button {
+    width: 100%;
+}
+
+#hintBtn {
+    background: #334155;
+    color: #facc15;
+}
+
+#nextBtn {
+    background: #16a34a;
+    color: white;
+}
+
+.restart-btn {
+    width: 100%;
+    background: transparent;
+    color: #94a3b8;
+    border: 1px solid #475569;
+    margin-top: 12px;
+}
+
+@media (hover: hover) {
+    button:hover:not(:disabled) {
+        filter: brightness(1.15);
+        transform: translateY(-2px);
+    }
+}
+
+/* ==============================
+   MESSAGES
+============================== */
+
+#message {
+    width: 100%;
+    text-align: center;
+    min-height: 25px;
+    margin-top: 12px;
+    line-height: 1.5;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.correct {
+    color: #4ade80;
+}
+
+.incorrect {
+    color: #f87171;
+}
+
+/* ==============================
+   USER MANUAL
+============================== */
+
+.manual-container {
+    width: 100%;
+    max-width: 700px;
+    min-width: 0;
+    background: #1e293b;
+    padding: clamp(16px, 5vw, 30px);
+    border-radius: 20px;
+    line-height: 1.8;
+}
+
+.manual-container h2 {
+    font-size: clamp(18px, 4vw, 24px);
+    color: #60a5fa;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.manual-container ul,
+.manual-container ol {
+    padding-left: 22px;
+}
+
+.manual-container li {
+    margin-bottom: 8px;
+}
+
+.manual-container p {
+    color: #cbd5e1;
+}
+
+/* ==============================
+   FOOTER
+============================== */
+
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 20px 10px;
+    color: #94a3b8;
+    font-size: 12px;
+    line-height: 1.8;
+    margin-top: auto;
+}
+
+/* ==============================
+   MOBILE DEVICES
+============================== */
+
+@media (max-width: 480px) {
+
+    body {
+        padding: 0 10px;
+    }
+
+    header {
+        padding: 20px 0 15px;
+    }
+
+    .game-container {
+        padding: 14px;
+        border-radius: 14px;
+    }
+
+    .clue-box {
+        padding: 15px 10px;
+        margin-bottom: 15px;
+    }
+
+    .actions button {
+        font-size: 13px;
+    }
+
+    .manual-container {
+        padding: 16px;
+        border-radius: 14px;
+    }
+
+    footer {
+        padding: 15px 5px;
+    }
+}
+
+/* ==============================
+   SMALL MOBILE DEVICES
+============================== */
+
+@media (max-width: 360px) {
+
+    body {
+        padding: 0 8px;
+    }
+
+    .game-container {
+        padding: 12px;
+    }
+
+    .actions {
+        grid-template-columns: 1fr;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    .clue-box h2 {
+        font-size: 20px;
+    }
+}
+
+/* ==============================
+   LANDSCAPE DEVICES
+============================== */
+
+@media (orientation: landscape) and (max-height: 500px) {
+
+    header {
+        padding: 12px 0;
+    }
+
+    .game-container {
+        max-width: 650px;
+    }
+
+    footer {
+        padding: 12px;
+    }
+}
